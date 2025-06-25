@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Landing Page</title>
+  <title>杭州.com — 杭州线上品牌首席域名，诚意出售</title>
 
   <style>
     /* Reset default margins */
@@ -12,7 +12,15 @@
       padding: 0;
       box-sizing: border-box;
     }
+/* Tagline just above the email link */
+    .tagline {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  color: #ffffff;      /* white text */
+  text-align: center;
+}
 
+    
     /* Full-screen background video */
     #bgVideo {
       position: fixed;
@@ -23,7 +31,7 @@
       object-fit: cover;   /* fill screen, keep aspect ratio */
       z-index: -1;         /* stay behind page content */
     }
-
+    
     /* Page content wrapper */
     .content {
       display: flex;
@@ -58,10 +66,27 @@
     Your browser doesn’t support HTML5 video.
   </video>
 
-  <!-- Page content -->
+ <!-- Page content -->
   <div class="content">
-    <!-- Replace the address below -->
-    <a class="email-link" href="mailto:hello@example.com">hello@example.com</a>
+    <div class="tagline">杭州.com — 杭州线上品牌首席域名，诚意出售。
+
+</div>
+    <!-- Visible text stays “Request Info”; email is added by JS -->
+    <a id="mailto" class="email-link" href="#">联系我们 / Info</a>
   </div>
+
+  <!-- Obfuscation script: assembles the email only after the page loads -->
+  <script>
+    (function () {
+      const user   = "dentonshadow";   // local part
+      const domain = "gmail.com";      // domain part
+      const link   = document.getElementById("mailto");
+
+      link.href = `mailto:${user}@${domain}`;
+      /* If you want the address to show instead of “Request Info,”
+         uncomment the next line: */
+      // link.textContent = `${user}@${domain}`;
+    })();
+  </script>
 </body>
 </html>
