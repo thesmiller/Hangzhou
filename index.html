@@ -137,4 +137,10 @@
       if (e.target.tagName === 'A') {
         hamburger.classList.remove('open');
         menu.classList.remove('open');
-        hamburger.
+        hamburger.setAttribute('aria-expanded', false);
+        menu.setAttribute('aria-hidden', true);
+      }
+    });
+  </script>
+</body>
+</html>
